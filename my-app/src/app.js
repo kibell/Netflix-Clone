@@ -3,16 +3,19 @@ import jumboData from './fixtures/jumbo.json'
 
 import Jumbotron from "./components/jumbotron";
 
-export default function App() {
+export default function app() {
   return (
     <Jumbotron.Container>
         {jumboData.map((item) => (
           <Jumbotron key={item.id} direction={item.direction}>
-            <p>{item.title}</p>
-            <p>{item.subTitle}</p>
-            <p>{item.image}</p>
-            <p>{item.alt}</p>
+            <Jumbotron.Pane>
+            <Jumbotron.Title>{item.title}</Jumbotron.Title>
+            <Jumbotron.SubTitle>{item.subtitle}</Jumbotron.SubTitle>
+            </Jumbotron.Pane>
 
+            <Jumbotron.Pane>
+            <Jumbotron.Image src = {item.image} alt ={item.alt} />
+            </Jumbotron.Pane>
           </Jumbotron>
 
         )
@@ -23,5 +26,4 @@ export default function App() {
 
 
   );
-}
-
+        }
