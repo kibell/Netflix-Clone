@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "firebase": "^9.4.1",
+    "fuse.js": "^6.4.6",
+    "normalize": "^0.3.1",
+    "normalize.css": "^8.0.1",
+    "styled-components": "^5.3.3"
+  }
+}
