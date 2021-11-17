@@ -16,25 +16,55 @@ width:100%;
 }
 
 `;
-export const Container = styled.div``
+
+
+
+
+export const Container = styled.div`
+  
+    
+  `
+
+  export const Item = styled.div`
+  display: flex;
+  border-bottom: 8px solid #222;
+  padding: 50px 5%;
+  color: white;
+  overflow: hidden;
+`;
 
 
 export const Pane = styled.div`
- width: 50%;
+width: 50%;
+@media (max-width: 1000px) {
+  width: 100%;
+  padding: 0 45px;
+  text-align: center;
 
 `
 
 export const Title = styled.h1`
- 
+font-size: 50px;
+line-height: 1.1;
+margin-bottom: 8px;
+@media (max-width: 600px) {
+  font-size: 35px;
+}
  
 `
 
 export const SubTitle = styled.h2`
-
- 
+font-size: 26px;
+  font-weight: normal;
+  line-height: normal;
+  @media (max-width: 600px) {
+    font-size: 18px;
+  }
 `
 
 export const Image = styled.img`
- width: 50%;
+ width: 100%;
+ height: auto
  
 `
+
