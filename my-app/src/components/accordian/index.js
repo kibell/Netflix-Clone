@@ -1,5 +1,5 @@
 import React, {useContext ,createContext, useState} from 'react'
-import { Container, Inner } from '../jumbotron/styles/jumbotron'
+import { Container, Inner,Frame, Title,Item,Header,Body } from '../accordian'
 
 const ToggleContext = createContext();
 
@@ -43,6 +43,22 @@ Accordian.Header = function AccordianHeader({ children, ...restProps}) {
    const{toggleShow, setToggleShow} = useContext(ToggleContext)
 
    //We want to return the chlild value
-return <Header onClick={()=> setToggle() }{...restProps}>{children}</Header>
+return (
+    <Header 
+        onClick={() => setToggleShow ((toggleShow) => !toggleShow)}  
+    {...restProps}
+        >
+        {children}
+    </Header>
+        );
+
 };
 
+Accordian.Body = function AccordianBody({ children, ...restProps}) {
+
+    const { toggleShow } = useContext(ToggleContext);
+//The question mark ? is an alternative to an if statement best used in the case where one of two values will be assigned to a variable based on a conditional statement.
+//Conditional Ternary Operator
+
+    return toggleShow ? <Body {...restProps}>{children}</Body> : null
+}
