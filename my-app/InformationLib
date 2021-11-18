@@ -1,0 +1,12 @@
+Here I am listing all things that are unclear to me so that I can review futher
+
+
+
+
+##P
+    Provider - provies the ability to access the store, To get my components to actually use and update the store for state,
+     
+
+## R
+
+    Rest props - Allows you to extract the remaining properties from an object into a new Object
