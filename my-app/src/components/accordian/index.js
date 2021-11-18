@@ -1,4 +1,4 @@
-import React, {useContext ,createContext, useState} from 'react'
+import React, {useState,useContext ,createContext} from 'react'
 import { Container, Inner,Frame, Title,Item,Header,Body } from './styles/accordian'
 
 const ToggleContext = createContext();
@@ -38,27 +38,30 @@ return <ToggleContext.Provider value = {{ toggleShow, setToggleShow}} >
     </ToggleContext.Provider>
 };
 
-Accordian.Header = function AccordianHeader({ children, ...restProps}) {
-
-   const{toggleShow, setToggleShow} = useContext(ToggleContext)
-
-   //We want to return the chlild value
-return (
-    <Header 
-        onClick={() => setToggleShow ((toggleShow) => !toggleShow)}  
-    {...restProps}
-        >
+Accordian.Header = function AccordianHeader({ children, ...restProps }) {
+    const { toggleShow, setToggleShow } = useContext(ToggleContext);
+  
+    return (
+      <Header onClick={() => setToggleShow(!toggleShow)} {...restProps}>
         {children}
-    </Header>
-        );
+        {toggleShow ? (
+          <img src="/images/close-slim.png" alt="Close" />
+        ) : (
+          <img src="/images/add.png" alt="Open" />
+        )}
+      </Header>
+    );
+  };
 
-};
-
-Accordian.Body = function AccordianBody({ children, ...restProps}) {
-
+  Accordian.Body = function AccordianBody({ children, ...restProps }) {
     const { toggleShow } = useContext(ToggleContext);
-//The question mark ? is an alternative to an if statement best used in the case where one of two values will be assigned to a variable based on a conditional statement.
-//Conditional Ternary Operator
-
-    return toggleShow ? <Body {...restProps}>{children}</Body> : null
-}
+  
+    //  return toggleShow ? <Body {...restProps}>{children}</Body> : null; 
+  
+    return (
+      <Body className={toggleShow ? 'open' : 'closed'} {...restProps}>
+        <span>{children}</span>
+      </Body>
+    )
+    
+  };
