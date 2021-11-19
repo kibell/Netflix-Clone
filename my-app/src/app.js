@@ -1,8 +1,6 @@
 import React, { Fragment } from "react";
 import {BrowserRouter as Router, Route} from 'react-router-dom'
-import JumbotronContainer from "./containers/jumbotron";
-import { FooterContainer } from "./containers/footer";
-import { FaqsContainer } from "./containers/faqs";
+import {HOME, BROWSE, SIGN_IN, SIGN_UP} from './pages'
 import * as ROUTES from './constants/routes'
 
 
@@ -12,11 +10,20 @@ export default function app() {
     <Router>
      
       <Route exact path="/">
-       <JumbotronContainer />
-       <FaqsContainer/>
-       <FooterContainer/>
+     <HOME></HOME>
        </Route>
        
+       <Route exact path ='/BROWSE'>
+         <BROWSE></BROWSE>
+       </Route>
+
+       <Route exact path ='/SIGN_UP'>
+         <SIGN_UP></SIGN_UP>
+       </Route>
+
+       <Route exact path ='/SIGN_IN'>
+         <SIGN_IN></SIGN_IN>
+       </Route>
     </Router>     
   </>
    ) }
