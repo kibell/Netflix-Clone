@@ -1,7 +1,9 @@
 Here I am listing all things that are unclear to me so that I can review futher
 
 
-
+##C 
+    Children - Special prop passed to every component, that can be used to render the content
+    between the openong and closing tags when invoking a component
 
 ##P
     Provider - provies the ability to access the store, To get my components to actually use and update the store for state,
