@@ -13,7 +13,7 @@ return (
         <Feature>
             <Feature.Title>Unlimited films, TV programs and more.</Feature.Title>
             <Feature.SubTitle>Watch anywhere. Cancel at anytime</Feature.SubTitle>
-        </Feature>
+        
 
     <OptForm>
     <OptForm.Input placeholder="Email Address" />
@@ -23,6 +23,7 @@ return (
             </OptForm.Text>
 
     </OptForm>
+    </Feature>
     </HeaderContainer>
       <JumbotronContainer />
        <FaqsContainer/>
