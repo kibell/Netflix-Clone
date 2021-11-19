@@ -12,7 +12,7 @@ return (
     <HeaderContainer>
         <Feature>
             <Feature.Title>Unlimited films, TV programs and more.</Feature.Title>
-            <Feature.SubTitle>Watdh anywhere. Cancel at anytime</Feature.SubTitle>
+            <Feature.SubTitle>Watch anywhere. Cancel at anytime</Feature.SubTitle>
         </Feature>
 
     <OptForm>
