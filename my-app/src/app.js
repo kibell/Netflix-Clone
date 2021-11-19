@@ -10,19 +10,19 @@ export default function app() {
     <Router>
      
       <Route exact path="/">
-     <HOME></HOME>
+     <HOME/>
        </Route>
        
-       <Route exact path ='/BROWSE'>
-         <BROWSE></BROWSE>
+       <Route exact path ='/browse'>
+         <BROWSE/>
        </Route>
 
-       <Route exact path ='/SIGN_UP'>
-         <SIGN_UP></SIGN_UP>
+       <Route exact path ='/signup'>
+         <SIGN_UP/>
        </Route>
 
-       <Route exact path ='/SIGN_IN'>
-         <SIGN_IN></SIGN_IN>
+       <Route exact path ='/signin'>
+         <SIGN_IN/>
        </Route>
     </Router>     
   </>
