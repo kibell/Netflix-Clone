@@ -3,7 +3,6 @@ import JumbotronContainer from "../containers/jumbotron";
 import { FooterContainer } from "../containers/footer";
 import { FaqsContainer } from "../containers/faqs";
 import {HeaderContainer} from "../containers/header"
-import { Header } from "../components/accordian/styles/accordian";
 import { OptForm, Feature } from "../components";
 export default function Home(){
 return (
