@@ -26,13 +26,22 @@ export default function SignIn() {
     //firebase 
     
     firebase.auth()
-        .signInWithEmailAndPassword(emailAddress, password)
-        .then(() =>{
-            //if the sign in is sucessfull then we want to push them to another page
-            history.push(ROUTES.BROWSE)
-    
+        .createUserWithEmailAndPassword(emailAddress, password)
+        .then((result) =>{
+            result.user
+            .updateProfile({
+                displayName: firstName,
+                photoURL: Math.floor(Math.random() * 5) +1,
+
+            })
+            .then(() => {
+                history.push(ROUTES.BROWSE);
+                 
+            })
+           
         })
         .catch((error) => {
+            setFirstName('')
             setEmailAddress('')
             setPassword('')
             setError(error.message);
