@@ -1,21 +1,36 @@
-import React, {useState, Fragment } from "react";
+import React, {useState, Fragment, useContext } from "react";
 import Form from "../components/form";
+import {FirebaseContext} from '../context/firebase'
 import { FooterContainer } from "../containers/footer";
 import {HeaderContainer} from "../containers/header"
+import * as ROUTES from '../constants/routes'
 
 export default function SignIn() {
+const { firebase } = useContext(FirebaseContext)
 
-const [emailAddress, setEmailAddress] = useState()
-const [password, setPassword] = useState()
+const [emailAddress, setEmailAddress] = useState('')
+const [password, setPassword] = useState('')
 const [error, setError] = useState('');
 
 //here we are going to check if the form inputs are valid
 const isInValid = password === '' || emailAddress === '';
 const handleSignIn = (event) => {
-
     event.preventDefault();
 
+//firebase 
 
+firebase.auth()
+    .signInWithEmailAndPassword(emailAddress, password)
+    .then(() =>{
+        //if the sign in is sucessfull then we want to push them to another page
+
+
+    })
+    .catch((error) => {
+        setEmailAddress('')
+        setPassword('')
+        setError(error.message);
+    })
 
 }
 
@@ -33,11 +48,13 @@ const handleSignIn = (event) => {
                 <Form.Input 
                     placeholder ="Email Address"
                     value={emailAddress}
+                    
                     onChange={({ target }) => setEmailAddress(target.value)}
                     />
                 
                 <Form.Input 
                     placeholder ="Password"
+                    //type password will mask the password
                     type="password"
                     autoComplete="off"
                     value={password}
@@ -49,6 +66,14 @@ const handleSignIn = (event) => {
                     </Form.Submit>
 
             </Form.Base>
+
+            <Form.Text>
+                New to Netflix? <Form.Link to="/signup">Sign up Now.</Form.Link>
+            </Form.Text>
+
+            <Form.TextSmall>
+                This page is protected by Google reCAPTCHA
+            </Form.TextSmall> 
 
         </Form>
         </HeaderContainer> 
