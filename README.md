@@ -1,7 +1,7 @@
 
 
 ![App Screenshot](Template.gif)
-![App Screenshot](Template2.gif)
+![App Screenshot](2.gif)
 
 
 
