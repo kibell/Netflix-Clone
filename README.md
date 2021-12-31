@@ -6,7 +6,7 @@ A netflix clone App that used React, Router Dom
 
 ## Screenshots
 
-![App Screenshot](Readme Template.gif)
+![App Screenshot](Template.gif)
 
 
 ## Demo
